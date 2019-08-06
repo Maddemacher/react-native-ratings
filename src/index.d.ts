@@ -2,7 +2,6 @@ import * as React from 'react';
 import { ImageURISource, ViewPropTypes } from 'react-native';
 
 export interface RatingProps {
-
   /**
    * Graphic used for represent a rating
    *
@@ -94,13 +93,12 @@ export interface RatingProps {
   /**
    * Callback method when the user finishes rating. Gives you the final rating value as a whole number
    */
-  onFinishRating?( rating: number ): void;
+  onFinishRating?(rating: number): void;
 }
 
 export class Rating extends React.Component<RatingProps> {}
 
 export interface AirbnbRatingProps {
-
   /**
    * Initial value for the rating
    *
@@ -134,7 +132,17 @@ export interface AirbnbRatingProps {
   /**
    * Callback method when the user finishes rating. Gives you the final rating value as a whole number
    */
-  onFinishRating?( value: number ): void;
+  onFinishRating?(value: number): void;
+
+  /**
+   * Styling for the outer container
+   */
+  containerStyle?: object;
+
+  /**
+   * Styling for the text
+   */
+  textStyle?: object;
 }
 
 export class AirbnbRating extends React.Component<AirbnbRatingProps> {}
